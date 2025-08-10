@@ -2,13 +2,13 @@ package com.example.kafkaproject.service;
 
 import com.example.kafkaproject.entity.Order;
 import org.springframework.stereotype.Service;
-
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class OrderService {
 
-    private static final Logger logger = Logger.getLogger(OrderService.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(OrderService.class);
 
     private final OrderKafkaProducer orderKafkaProducer;
     public OrderService(OrderKafkaProducer orderKafkaProducer) {
