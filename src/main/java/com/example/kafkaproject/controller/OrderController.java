@@ -20,11 +20,6 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity<Order> createOrder(@RequestBody Order order) {
-        if (order == null) {
-            return ResponseEntity.badRequest().build();
-        } else {
-            orderService.createOrder(order);
-        }
-        return ResponseEntity.ok(order);
+        return order == null ? ResponseEntity.badRequest().build() : ResponseEntity.ok(order);
     }
 }
